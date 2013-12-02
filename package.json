@@ -1,0 +1,50 @@
+{
+  "name": "grunt-load-options",
+  "description": "A simple plugin to modularize your Gruntfile by putting options and tasks in a `grunt` subfolder.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/chriszarate/grunt-load-options",
+  "author": {
+    "name": "Chris Zarate",
+    "email": "chris@zarate.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chriszarate/grunt-load-options.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chriszarate/grunt-load-options/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/chriszarate/grunt-load-options/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt-load-options",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "require-directory": "~1.2.0"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "~0.1.0",
+    "grunt-load-options": "~0.1.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt": "~0.4.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+    "gruntplugin",
+    "module",
+    "modularize",
+    "automation",
+    "loader",
+    "options",
+    "tasks",
+    "subfolder",
+    "sidecar"
+  ]
+}
