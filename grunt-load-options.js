@@ -11,7 +11,7 @@
 var requireDirectory = require('require-directory');
 
 module.exports = function(grunt) {
-  grunt.initConfig(requireDirectory(module, __dirname + '/grunt/options'));
-  grunt.loadTasks(__dirname + '/grunt/tasks');
+  grunt.initConfig(requireDirectory(module, './grunt/options'));
+  grunt.loadTasks('./grunt/tasks');
 };
 
