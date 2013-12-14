@@ -1,2 +1,3 @@
-This folder exists to play nicely with plugins (namely, "load-grunt-tasks") 
-that expect a `tasks` folder in other plugins.
+# grunt-load-options
+
+This folder contains the Grunt plugin code. No need to mirror this in your project.

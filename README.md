@@ -12,8 +12,10 @@ This plugin requires [Grunt](http://gruntjs.com) `~0.4.0`.
 npm install grunt-load-options --save-dev
 ```
 
-Once the plugin has been installed, it can be enabled in `Gruntfile.js`:
+Once the plugin has been installed, it can be enabled in your `Gruntfile.js`:
 
 ```js
-require('grunt-load-options')(grunt);
+grunt.loadNpmTasks('grunt-load-options');
 ```
+
+Use this plugin in conjunction with [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks) for a nice, clean, static Gruntfile and easily portable Grunt options and tasks. That’s what I do in this project’s Gruntfile.

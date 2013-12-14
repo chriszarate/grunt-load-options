@@ -1,13 +1,11 @@
-/* Static Gruntfile */
+/*
+  Static Gruntfile
+  - Load Grunt plugins with `load-grunt-tasks`.
+  - Load Grunt options and aliases with `grunt-load-options`.
+*/
 
 'use strict';
 
 module.exports = function(grunt) {
-
-  // Load Grunt plugins.
   require('load-grunt-tasks')(grunt);
-
-  // Load Grunt options.
-  require('grunt-load-options')(grunt);
-
 };
