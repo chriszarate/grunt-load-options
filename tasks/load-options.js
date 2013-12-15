@@ -11,7 +11,18 @@
 var requireDirectory = require('require-directory');
 
 module.exports = function(grunt) {
-  grunt.initConfig(requireDirectory(module, './grunt/options'));
-  grunt.loadTasks('./grunt/tasks');
-};
 
+  // Load config options.
+  var options = requireDirectory(module, './grunt/options');
+
+  // Resolve options expressed as functions.
+  Object.keys(options).forEach(function(name) {
+    if(typeof options[name] === 'function') {
+      options[name] = options[name](grunt);
+    }
+  });
+
+  grunt.initConfig(options);
+  grunt.loadTasks('./grunt/tasks');
+
+};
