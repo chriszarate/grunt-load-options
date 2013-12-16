@@ -2,8 +2,11 @@
 
 This Grunt plugin provides a very simple way to modularize your Gruntfile. Put
 plugin options in `grunt/options` and tasks/aliases in `grunt/tasks`. Use
-JavaScript, CoffeeScript, or JSON! See this project’s Gruntfile and `grunt`
-folder for an example.
+JavaScript, CoffeeScript, or JSON.
+
+In other words, stop fussing with your Gruntfile whenever you start a new 
+project. Instead, just copy over the files you need. See this project’s 
+Gruntfile and `grunt` folder for an example.
 
 
 ## Getting Started
@@ -33,7 +36,7 @@ module.exports = function(grunt) {
 };
 ```
 
-That’s it! That’s your entire Gruntfile, forever.
+That’s it! That’s your entire Gruntfile, forever, for every project.
 
 
 ### Plugin options
