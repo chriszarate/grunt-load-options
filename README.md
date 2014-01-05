@@ -4,8 +4,8 @@ This Grunt plugin provides a very simple way to modularize your Gruntfile. Put
 plugin options in `grunt/options` and tasks/aliases in `grunt/tasks`. Use
 JavaScript, CoffeeScript, or JSON.
 
-In other words, stop fussing with your Gruntfile whenever you start a new 
-project. Instead, just copy over the files you need. See this project’s 
+In other words, stop fussing with your Gruntfile whenever you start a new
+project. Instead, just copy over the files you need. See this project’s
 Gruntfile and `grunt` folder for an example.
 
 
@@ -17,7 +17,8 @@ This plugin requires [Grunt][] `~0.4.0`.
 npm install grunt-load-options --save-dev
 ```
 
-Once the plugin has been installed, it can be enabled in your `Gruntfile.js`:
+Once the plugin has been installed, it can be enabled in your `Gruntfile.js`
+(or use [load-grunt-tasks][] and skip this step):
 
 ```js
 grunt.loadNpmTasks('grunt-load-options');
@@ -27,8 +28,7 @@ grunt.loadNpmTasks('grunt-load-options');
 ## Example usage
 
 Use this plugin in conjunction with [load-grunt-tasks][] for a nice, clean,
-static Gruntfile and easily portable Grunt options and tasks. That’s what I do
-in this project’s Gruntfile:
+static Gruntfile and easily portable Grunt options and tasks:
 
 ```js
 module.exports = function(grunt) {
@@ -36,7 +36,9 @@ module.exports = function(grunt) {
 };
 ```
 
-That’s it! That’s your entire Gruntfile, forever, for every project.
+That’s it! That’s your entire Gruntfile, forever, for every project. Behind
+the scenes, this plugin loads your plugin configuration and tasks from the
+`grunt` subfolder.
 
 
 ### Plugin options
@@ -80,7 +82,8 @@ module.exports = function(grunt) {
 };
 ```
 
-You can also use CoffeeScript. (Make sure to give your file a `.coffee` extension.)
+You can also use CoffeeScript. (Make sure to give your file a `.coffee`
+extension.)
 
 ```coffee
 module.exports = (grunt) ->
@@ -106,6 +109,19 @@ CoffeeScript works here, too:
 ```coffee
 module.exports = (grunt) ->
   console.log grunt.template.process "grunt-load-options v<%= pkg.version %>"
+```
+
+
+### Custom folder
+
+Point the plugin to a different folder by setting a Grunt configuration option
+before the plugin is loaded.
+
+```js
+module.exports = function(grunt) {
+  grunt.config.set('load-options.folder', '~/.grunt-options');
+  require('load-grunt-tasks')(grunt);
+};
 ```
 
 
