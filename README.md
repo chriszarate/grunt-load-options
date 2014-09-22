@@ -129,8 +129,8 @@ module.exports = function (grunt) {
 
 [build-status]: https://secure.travis-ci.org/chriszarate/grunt-load-options.svg?branch=master
 [npm-badge]: https://badge.fury.io/js/grunt-load-options.svg
-[travis-ci]: http://travis-ci.org/chriszarate/supergenpass-lib
-[fury-io]: http://badge.fury.io/js/supergenpass-lib
+[travis-ci]: http://travis-ci.org/chriszarate/grunt-load-options
+[fury-io]: http://badge.fury.io/js/grunt-load-options
 [Grunt]: http://gruntjs.com
 [load-grunt-tasks]: https://github.com/sindresorhus/load-grunt-tasks
 [grunt-contrib-jshint]: https://github.com/gruntjs/grunt-contrib-jshint
