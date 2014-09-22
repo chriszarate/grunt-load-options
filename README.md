@@ -1,8 +1,8 @@
 # grunt-load-options
 
 This Grunt plugin provides a very simple way to modularize your Gruntfile. Put
-plugin options in `grunt/options` and tasks/aliases in `grunt/tasks`. Use
-JavaScript, CoffeeScript, or JSON.
+plugin configuration options in `grunt/config` and tasks/aliases in
+`grunt/tasks`. Use JavaScript, CoffeeScript, or JSON.
 
 In other words, stop fussing with your Gruntfile whenever you start a new
 project. Instead, just copy over the files you need. See this project’s
@@ -14,7 +14,7 @@ Gruntfile and `grunt` folder for an example.
 This plugin requires [Grunt][] `~0.4.0`.
 
 ```shell
-npm install grunt-load-options --save-dev
+npm install -D grunt-load-options
 ```
 
 Once the plugin has been installed, it can be enabled in your `Gruntfile.js`
@@ -31,7 +31,7 @@ Use this plugin in conjunction with [load-grunt-tasks][] for a nice, clean,
 static Gruntfile and easily portable Grunt options and tasks:
 
 ```js
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 };
 ```
@@ -43,9 +43,10 @@ the scenes, this plugin loads your plugin configuration and tasks from the
 
 ### Plugin options
 
-To configure a Grunt plugin, create a file in `grunt/options`. The name of the
-file should correspond to the key of the options hash. For example, if you
-want to configure [grunt-contrib-jshint][], create a file named `jshint.js`:
+To configure a Grunt plugin, create a file in `grunt/config` or `grunt/options`
+(either works). The name of the file should correspond to the property of the
+configuration object we want to define. For example, if you want to configure
+[grunt-contrib-jshint][], create a file named `jshint.js`:
 
 ```js
 module.exports = {
@@ -74,10 +75,10 @@ Or just provide JSON! (Make sure to give your file a `.json` extension.)
 ```
 
 If you need access to the grunt object, wrap it in a function with `grunt` as
-a parameter and return your options object:
+a parameter and return your options object. Here’s `pkg.js`:
 
 ```js
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   return grunt.file.readJSON('package.json');
 };
 ```
@@ -93,13 +94,13 @@ module.exports = (grunt) ->
 
 ### Tasks and aliases
 
-To create a task or alias, create a file in `grunt/tasks`:
+To create a task or alias, create a file in `grunt/tasks` or `grunt/aliases`:
 
-Every task needs access to the grunt object, so you’ll definitely need wrap it
-in a function with `grunt` as a parameter. No need to return anything, though.
+Every task needs access to the grunt object, so wrap it in a function with
+`grunt` as a parameter. No need to return anything, though.
 
 ```js
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.registerTask('default', ['jshint']);
 };
 ```
@@ -114,13 +115,11 @@ module.exports = (grunt) ->
 
 ### Custom folder
 
-Point the plugin to a different folder by setting a Grunt configuration option
-before the plugin is loaded.
+Point the plugin to a different folder using the optional options parameter.
 
 ```js
-module.exports = function(grunt) {
-  grunt.config.set('load-options.folder', '~/.grunt-options');
-  require('load-grunt-tasks')(grunt);
+module.exports = function (grunt) {
+  require('load-grunt-tasks')(grunt, {folder: '~/.grunt-options'});
 };
 ```
 
