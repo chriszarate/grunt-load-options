@@ -1,5 +1,8 @@
 # grunt-load-options
 
+[![Build Status][build-status]][travis-ci]
+[![NPM version][npm-badge]][fury-io]
+
 This Grunt plugin provides a very simple way to modularize your Gruntfile. Put
 plugin configuration options in `grunt/config` and tasks/aliases in
 `grunt/tasks`. Use JavaScript, CoffeeScript, or JSON.
@@ -124,6 +127,8 @@ module.exports = function (grunt) {
 ```
 
 
+[build-status]: https://secure.travis-ci.org/chriszarate/grunt-load-options.svg?branch=master
+[npm-badge]: https://badge.fury.io/js/grunt-load-options.svg
 [Grunt]: http://gruntjs.com
 [load-grunt-tasks]: https://github.com/sindresorhus/load-grunt-tasks
 [grunt-contrib-jshint]: https://github.com/gruntjs/grunt-contrib-jshint
