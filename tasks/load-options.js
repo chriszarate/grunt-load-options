@@ -10,22 +10,33 @@
 
 var requireDirectory = require('require-directory');
 
-module.exports = function(grunt) {
+module.exports = function (grunt, options) {
 
-  // Get folder.
-  var folder = grunt.config.get('load-options.folder') || './grunt';
+  var config = {};
 
-  // Load config options.
-  var options = requireDirectory(module, folder + '/options');
+  options = options || {};
+  options.folder = grunt.config.get('load-options.folder') || options.folder || './grunt';
+  options.configFolders = options.configFolders || ['config', 'options'];
+  options.taskFolders = options.taskFolders || ['tasks', 'aliases'];
 
-  // Resolve options expressed as functions.
-  Object.keys(options).forEach(function(name) {
-    if(typeof options[name] === 'function') {
-      options[name] = options[name](grunt);
+  // Load configuration.
+  options.configFolders.forEach(function (configFolder) {
+    var src = options.folder + '/' + configFolder;
+    if (grunt.file.exists(src) && grunt.file.isDir(src)) {
+      var obj = requireDirectory(module, src);
+      Object.keys(obj).forEach(function (prop) {
+        config[prop] = (typeof obj[prop] === 'function') ? obj[prop](grunt) : obj[prop];
+      });
     }
   });
+  grunt.initConfig(config);
 
-  grunt.initConfig(options);
-  grunt.loadTasks(folder + '/tasks');
+  // Load tasks.
+  options.taskFolders.forEach(function (taskFolder) {
+    var src = options.folder + '/' + taskFolder;
+    if (grunt.file.exists(src) && grunt.file.isDir(src)) {
+      grunt.loadTasks(src);
+    }
+  });
 
 };
