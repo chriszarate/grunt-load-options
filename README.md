@@ -14,10 +14,10 @@ Gruntfile and `grunt` folder for an example.
 
 ## Getting Started
 
-This plugin requires [Grunt][] `~0.4.0`.
+This plugin requires [Grunt][] `>=0.4.0`.
 
 ```shell
-npm install -D grunt-load-options
+npm install --save-dev grunt-load-options
 ```
 
 Once the plugin has been installed, it can be enabled in your `Gruntfile.js`
@@ -129,8 +129,8 @@ module.exports = function (grunt) {
 
 [build-status]: https://secure.travis-ci.org/chriszarate/grunt-load-options.svg?branch=master
 [npm-badge]: https://badge.fury.io/js/grunt-load-options.svg
-[travis-ci]: http://travis-ci.org/chriszarate/grunt-load-options
-[fury-io]: http://badge.fury.io/js/grunt-load-options
+[travis-ci]: https://travis-ci.org/chriszarate/grunt-load-options
+[fury-io]: https://badge.fury.io/js/grunt-load-options
 [Grunt]: http://gruntjs.com
 [load-grunt-tasks]: https://github.com/sindresorhus/load-grunt-tasks
 [grunt-contrib-jshint]: https://github.com/gruntjs/grunt-contrib-jshint
