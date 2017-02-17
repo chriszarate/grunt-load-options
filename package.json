@@ -1,7 +1,7 @@
 {
   "name": "grunt-load-options",
   "description": "A simple plugin to modularize your Gruntfile by putting configuration options and tasks in a `grunt` subfolder.",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "homepage": "https://github.com/chriszarate/grunt-load-options",
   "license": "MIT",
   "author": {
