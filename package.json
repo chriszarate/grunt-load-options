@@ -1,7 +1,7 @@
 {
   "name": "grunt-load-options",
   "description": "A simple plugin to modularize your Gruntfile by putting configuration options and tasks in a `grunt` subfolder.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/chriszarate/grunt-load-options",
   "author": {
     "name": "Chris Zarate",
@@ -28,16 +28,16 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "require-directory": "1.2.x"
+    "require-directory": "^2.1.0"
   },
   "devDependencies": {
-    "load-grunt-tasks": "0.x.x",
-    "grunt-load-options": "0.2.1",
-    "grunt-contrib-jshint": "0.x.x",
-    "grunt": "0.4.x"
+    "load-grunt-tasks": "^3.5.2",
+    "grunt-load-options": "^0.2.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt": ">=0.4.x"
   },
   "peerDependencies": {
-    "grunt": "0.4.x"
+    "grunt": ">=0.4.x"
   },
   "keywords": [
     "gruntplugin",

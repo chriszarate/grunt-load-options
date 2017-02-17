@@ -8,7 +8,8 @@
 
 'use strict';
 
-var requireDirectory = require('require-directory');
+var requireDirectory = require('require-directory'),
+    path = require('path');
 
 module.exports = function (grunt, options) {
 
@@ -21,7 +22,7 @@ module.exports = function (grunt, options) {
 
   // Load configuration.
   options.configFolders.forEach(function (configFolder) {
-    var src = options.folder + '/' + configFolder;
+    var src = path.resolve(path.join(options.folder, configFolder));
     if (grunt.file.exists(src) && grunt.file.isDir(src)) {
       var obj = requireDirectory(module, src);
       Object.keys(obj).forEach(function (prop) {
@@ -33,7 +34,7 @@ module.exports = function (grunt, options) {
 
   // Load tasks.
   options.taskFolders.forEach(function (taskFolder) {
-    var src = options.folder + '/' + taskFolder;
+    var src = path.resolve(path.join(options.folder, taskFolder));
     if (grunt.file.exists(src) && grunt.file.isDir(src)) {
       grunt.loadTasks(src);
     }
