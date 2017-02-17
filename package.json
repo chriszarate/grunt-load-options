@@ -23,7 +23,7 @@
   ],
   "main": "grunt-load-options",
   "scripts": {
-    "test": "grunt"
+    "test": "node tests"
   },
   "engines": {
     "node": ">= 0.8.0"
