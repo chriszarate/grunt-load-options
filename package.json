@@ -3,6 +3,7 @@
   "description": "A simple plugin to modularize your Gruntfile by putting configuration options and tasks in a `grunt` subfolder.",
   "version": "0.2.2",
   "homepage": "https://github.com/chriszarate/grunt-load-options",
+  "license": "MIT",
   "author": {
     "name": "Chris Zarate",
     "email": "chris@zarate.org"
